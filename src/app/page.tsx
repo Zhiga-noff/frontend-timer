@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SelectRate } from "@/src/entities";
 import { requestPageData } from "@/src/shared/libs/utils";
 import { GET_RATES } from "@/src/shared/libs/constants/api-paths";
+import { Warranty } from "@/src/entities/warranty/Warranty";
 
 export const metadata: Metadata = {
   title: "Феноменальная акция",
@@ -18,6 +19,7 @@ export default async function MainPage() {
         Выбери подходящий для себя <span>тариф</span>
       </h1>
       <SelectRate rates={rates} />
+      <Warranty />
     </main>
   );
 }

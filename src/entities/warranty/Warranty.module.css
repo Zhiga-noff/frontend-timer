@@ -1,0 +1,25 @@
+.Warranty {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid var(--dark-stroke);
+    padding: 20px;
+}
+
+.bage {
+    font-size: 28px;
+    line-height: 120%;
+    font-weight: 500;
+    color: var(--green);
+    background-color: var(--dark-green);
+    border-radius: 30px;
+    border: 1px solid var(--green);
+    padding: 16px 30px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 24px;
+    line-height: 130%;
+    color: #dcdcdc
+}
