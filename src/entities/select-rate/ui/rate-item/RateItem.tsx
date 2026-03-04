@@ -1,23 +1,31 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import { RateTypes } from "@/src/shared/libs/types/rate.types";
 import { calculateDiscount } from "@/src/entities/select-rate/utils/calculate-discount";
 import styles from "./RateItem.module.css";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   rate: RateTypes;
   sizeLg?: boolean;
+  activeRate: string;
 }
 
-export const RateItem: FC<Props> = ({ rate, sizeLg = false }) => {
-  const [activeRate, setActiveRate] = useState<boolean>(sizeLg);
-  const { period, price, full_price, text, is_best } = rate;
+export const RateItem: FC<Props> = ({
+  rate,
+  sizeLg = false,
+  activeRate,
+  onClick,
+}) => {
+  const { period, price, full_price, text, is_best, id } = rate;
 
   const discount = calculateDiscount(full_price, price);
 
   return (
-    <div className={`${styles.RateItem} ${sizeLg ? styles.sizeLg : ""}`}>
+    <div
+      onClick={onClick}
+      className={`${styles.RateItem} ${sizeLg ? styles.sizeLg : ""} ${activeRate === id ? styles.activeRate : ""}`}
+    >
       <div className={styles.discount}>-{discount}%</div>
       {is_best && <p className={styles.best}>хит!</p>}
       <div className={styles.priceBlock}>

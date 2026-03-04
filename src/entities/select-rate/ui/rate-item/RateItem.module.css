@@ -4,6 +4,7 @@
     align-items: center;
     padding: 70px 18px 33px;
     position: relative;
+    cursor: pointer;
 
     background-color: var(--bg--accent-color);
     border-radius: 40px;
@@ -24,6 +25,10 @@
         .timeInterval {
             margin-bottom: 16px;
         }
+    }
+
+    &.activeRate {
+        border-color: var(--accent-color);
     }
 }
 

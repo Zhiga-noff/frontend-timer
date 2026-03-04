@@ -18,7 +18,7 @@ export default async function MainPage() {
       <h1 className={"title"}>
         Выбери подходящий для себя <span>тариф</span>
       </h1>
-      <SelectRate rates={rates} />
+      <SelectRate rates={rates.reverse()} />
       <Warranty />
     </main>
   );

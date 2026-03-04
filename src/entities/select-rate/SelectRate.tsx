@@ -1,4 +1,6 @@
-import React, { FC } from "react";
+"use client";
+
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import manImg from "@/src/assets/img/man-img.png";
 import styles from "./SelectRate.module.css";
@@ -12,6 +14,8 @@ interface Props {
 }
 
 export const SelectRate: FC<Props> = ({ rates }) => {
+  const [activeRate, setActiveRate] = useState("");
+
   return (
     <section className={styles.SelectRate}>
       <div className={styles.image}>
@@ -23,8 +27,18 @@ export const SelectRate: FC<Props> = ({ rates }) => {
       </div>
       <div className={styles.rightBlock}>
         <div className={styles.rates}>
-          {rates.reverse().map((rate, index) => {
-            return <RateItem key={rate.id} rate={rate} sizeLg={index === 0} />;
+          {rates.map((rate, index) => {
+            return (
+              <RateItem
+                key={rate.id}
+                rate={rate}
+                sizeLg={index === 0}
+                activeRate={activeRate}
+                onClick={() => {
+                  setActiveRate(rate.id);
+                }}
+              />
+            );
           })}
         </div>
         <h4 className={styles.anatation}>
