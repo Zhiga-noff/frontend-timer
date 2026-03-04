@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 
 export default async function MainPage() {
   const rates = await requestPageData(GET_RATES);
-  // const rates = await fetch("https://t-core.fit-hub.pro/Test/GetTariffs");
 
   return (
     <main className={"container"}>
