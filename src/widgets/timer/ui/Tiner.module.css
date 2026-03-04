@@ -17,8 +17,18 @@
 
 .countdown {
     font-size: 40px;
-    font-family: var(--font-raleway);
+    font-family: var(--font-raleway) sans-serif;
     font-weight: 700;
     line-height: 100%;
     color: white;
+
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
 }
